@@ -25,6 +25,7 @@ function App() {
           <button onClick={() => setSnakeSize(snakeSize + 1)}>Attack1!</button>
           <button onClick={() => setParrotSize(parrotSize - 1)}>Attack2</button>
         </div>
+        <button onClick={() => setZooOpen(!isZooOpen)}>{isZooOpen ? 'Close Zoo' : 'Open Zoo'}</button>
         <div className='fighters'>
           <p style={{ fontSize: `${parrotSize * 10}px` }}>🦜</p>
           <button onClick={() => setParrotSize(parrotSize + 1)}>Attack3</button>
@@ -33,6 +34,7 @@ function App() {
       </section>
       <ZooOpen isZooOpen={isZooOpen}/>
       <AnimalParade animals={animals}/>
+
       <button onClick={addAnimal}>Add a random animal</button>
     </div>
   );
