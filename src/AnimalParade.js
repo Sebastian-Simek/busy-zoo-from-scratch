@@ -1,6 +1,11 @@
+import Animal from './Animal';
 
-export default function AnimalParade() {
+export default function AnimalParade({ animals }) {
   return (
-    <div>AnimalParade</div>
+    <div className='parade'>
+      {
+        animals.map((animal, i) => <Animal animal={animal} key={animal + i} />)
+      }
+    </div>
   );
 }

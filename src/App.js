@@ -2,11 +2,19 @@ import './App.css';
 import { useState } from 'react';
 import AnimalParade from './AnimalParade';
 import Header from './Header';
+import ZooOpen from './ZooOpen';
 function App() {
 
   const [snakeSize, setSnakeSize] = useState(2);
   const [parrotSize, setParrotSize] = useState(2);
+  const [animals, setAnimals] = useState(['duck', 'goose', 'chicken']);
+  const [isZooOpen, setZooOpen] = useState(true);
 
+  function addAnimal() {
+    const randomNum = Math.floor(Math.random() * 3);
+    animals.push(animals[randomNum]);
+    setAnimals(animals.slice());
+  }
 
   return (
     <div className="App">
@@ -23,16 +31,9 @@ function App() {
           <button onClick={() => setSnakeSize(snakeSize - 1)}>Attack4</button>
         </div>
       </section>
-      <div className='open-close'>
-        OPEN or CLOSE will go here
-      </div>
-      <AnimalParade />
-
-
-
-
-
-
+      <ZooOpen isZooOpen={isZooOpen}/>
+      <AnimalParade animals={animals}/>
+      <button onClick={addAnimal}>Add a random animal</button>
     </div>
   );
 }

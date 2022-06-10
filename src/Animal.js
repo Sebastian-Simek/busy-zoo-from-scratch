@@ -1,6 +1,10 @@
 
-export default function Animal() {
+export default function Animal({ animal }) {
   return (
-    <div>Animal</div>
+    <div>
+      {animal === 'duck' && '🦆'}
+      {animal === 'goose' && '🦢'}
+      {animal === 'chicken' && '🐓'}
+    </div>
   );
 }
