@@ -1,7 +1,8 @@
+body {
+  background-color: azure;
+}
 .App {
   text-align: center;
-  display: flex;
-  justify-content: space-evenly;
 }
 
 .App-logo {
@@ -46,8 +47,22 @@
   border: solid 2px goldenrod;
   border-radius: 5px;
   margin-top: 20px;
+  width: 200px;
+  background-color: bisque;
 }
 
 button{
   margin: 10px;
+  height: 30px;
+  background-color: #6cabbc;
+  border-radius: 5px;
+}
+
+.fighter-container{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.open-close{
+  margin: 100px;
 }
